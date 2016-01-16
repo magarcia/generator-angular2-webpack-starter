@@ -1,6 +1,6 @@
 {
   "name": "generator-angular2-webpack-starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Angular2 Webpack Starter Yeoman Generator",
   "license": "MIT",
   "main": "app/index.js",
@@ -27,7 +27,15 @@
     "angular",
     "angularjs2",
     "angular2",
-    "es6"
+    "es6",
+    "typescript",
+    "webpack",
+    "karma",
+    "protractor",
+    "jasmine",
+    "istanbul",
+    "tslint",
+    "typings"
   ],
   "preferGlobal": true,
   "dependencies": {
