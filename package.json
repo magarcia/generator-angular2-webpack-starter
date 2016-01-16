@@ -34,6 +34,7 @@
     "chalk": "1.0.0",
     "git-config": "0.0.7",
     "lodash": "3.7.0",
+    "mkdirp": "^0.5.1",
     "npm-check": "3.2.10",
     "yeoman-generator": "0.19.2",
     "yosay": "1.0.2"
