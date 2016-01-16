@@ -1,6 +1,6 @@
 # Generator Angular2 Webpack Starter
 
-[![Build Status](https://travis-ci.org/magarcia/generator-angular2-webpack-starter.svg?branch=master)](https://travis-ci.org/magarcia/generator-angular2-webpack-starter)  [![Gratipay Team](https://img.shields.io/gratipay/user/magarcia.svg)](https://gratipay.com/~magarcia/)
+[![Build Status](https://travis-ci.org/magarcia/generator-angular2-webpack-starter.svg?branch=master)](https://travis-ci.org/magarcia/generator-angular2-webpack-starter)  [![Gratipay Team](https://img.shields.io/gratipay/user/magarcia.svg)](https://gratipay.com/~magarcia/)  [![Code Climate](https://img.shields.io/codeclimate/github/magarcia/generator-angular2-webpack-starter.svg)]()
 
 A [Yeoman](http://yeoman.io) Generator to aid in bootstrapping an Angular2 application based on [Angular 2 Starter](https://angularclass.github.io/angular2-webpack-starter/)
 
