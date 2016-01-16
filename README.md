@@ -66,7 +66,10 @@ All contributions are more than welcome, no matter how large or small.
 
 Clone the repository and `cd` into it
 
-`git clone git@github.com:magarcia/generator-angular2-webpack-starter.git && cd generator-angular2-webpack-starter`
+```
+git clone git@github.com:magarcia/generator-angular2-webpack-starter.git
+cd generator-angular2-webpack-starter
+```
 
 Install the project dependencies
 
