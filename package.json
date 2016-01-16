@@ -1,18 +1,18 @@
 {
   "name": "generator-angular2-webpack-starter",
-  "version": "0.6.3",
+  "version": "0.0.1",
   "description": "Angular2 Webpack Starter Yeoman Generator",
   "license": "MIT",
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/swirlycheetah/generator-angular2.git"
+    "url": "git://github.com/magarcia/generator-angular2-webpack-starter.git"
   },
-  "author": "Chris Wheatley <chriswheatley87@gmail.com>",
+  "author": "Martin Garcia <newluxfero@gmail.com>",
   "bugs": {
-    "url": "https://github.com/swirlycheetah/generator-angular2/issues"
+    "url": "https://github.com/magarcia/generator-angular2-webpack-starter/issues"
   },
-  "homepage": "https://github.com/swirlycheetah/generator-angular2",
+  "homepage": "https://github.com/magarcia/generator-angular2-webpack-starter",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -33,7 +33,6 @@
   "dependencies": {
     "chalk": "1.0.0",
     "git-config": "0.0.7",
-    "inquirer-npm-name": "^1.0.0",
     "lodash": "3.7.0",
     "npm-check": "3.2.10",
     "yeoman-generator": "0.19.2",
