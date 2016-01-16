@@ -40,31 +40,6 @@ module.exports = yeoman.generators.Base.extend({
       required: false
     });
 
-    this.option('appname', {
-      desc: 'Application name',
-      required: false
-    });
-
-    this.option('name', {
-      desc: 'Name of the author',
-      required: false
-    });
-
-    this.option('email', {
-      desc: 'Email of the author',
-      required: false
-    });
-
-    this.option('website', {
-      desc: 'Website of the package',
-      required: false
-    });
-
-    this.option('year', {
-      desc: 'Year(s) to include on the license',
-      required: false,
-      defaults: (new Date()).getFullYear()
-    });
   },
 
   initializing: function () {
@@ -97,12 +72,12 @@ module.exports = yeoman.generators.Base.extend({
       },
       {
         name: 'description',
-        message: 'Description of the application:',
+        message: 'Description of the application:'
       },
       {
         name: 'keywords',
         message: 'Keywords:',
-        default: '',
+        default: ''
       },
       {
         name: 'name',
@@ -132,6 +107,10 @@ module.exports = yeoman.generators.Base.extend({
 
     this.prompt(prompts, function (props) {
       this.props = lodash.extend(this.props, props);
+      this.props.author = this.props.name.trim();
+      if (this.props.email) {
+        this.props.author += ' <' + this.props.email.trim() + '>';
+      }
       done();
     }.bind(this));
   },
@@ -139,17 +118,13 @@ module.exports = yeoman.generators.Base.extend({
   writing: {
     license: function () {
       var filename = this.props.license + '.txt';
-      var author = this.props.name.trim();
-      if (this.props.email) {
-        author += ' <' + this.props.email.trim() + '>';
-      }
 
       this.fs.copyTpl(
         this.templatePath(path.join('licenses', filename)),
         this.destinationPath('LICENSE'),
         {
           year: this.options.year,
-          author: author
+          author: this.props.author
         }
       );
     },
@@ -172,17 +147,12 @@ module.exports = yeoman.generators.Base.extend({
         }
       }
 
-      var author = this.props.name.trim();
-      if (this.props.email) {
-        author += ' <' + this.props.email.trim() + '>';
-      }
-
       copy('package.json', {
         appname: this.props.appname,
-        author: author,
+        author: this.props.author,
         homepage: this.props.website.trim(),
         license: this.props.license,
-        description: this.props.description,
+        description: this.props.description
       });
       var pkg = this.fs.readJSON(this.destinationPath('package.json'), {});
       pkg.keywords = makeKeywordsArray(this.props.keywords) || [];
@@ -219,10 +189,10 @@ module.exports = yeoman.generators.Base.extend({
       // App
       copy('src/app/app.ts', {
         appname: this.props.appname,
-        author: author
+        author: this.props.author
       });
       copy('src/app/app.spec.ts', {
-        appname: this.props.appname,
+        appname: this.props.appname
       });
       copy('src/app/directives/router-active.ts');
 
@@ -278,7 +248,7 @@ module.exports = yeoman.generators.Base.extend({
       copy('test/app/app.e2e.js', {
         appname: this.props.appname
       });
-    },
+    }
   },
 
   install: function() {
@@ -287,7 +257,7 @@ module.exports = yeoman.generators.Base.extend({
       bower: false,
       callback: function() {
         this.emit('dependenciesInstalled');
-      }.bind(this),
+      }.bind(this)
     });
 
     this.on('dependenciesInstalled', function() {
@@ -302,5 +272,5 @@ module.exports = yeoman.generators.Base.extend({
       }.bind(this));
     }.bind(this));
 
-  },
+  }
 });
