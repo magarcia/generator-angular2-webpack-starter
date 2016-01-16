@@ -6,21 +6,14 @@ A [Yeoman](http://yeoman.io) Generator to aid in bootstrapping an Angular2 appli
 
 ### Getting Started
 
-Install both [Yeoman](http://yeoman.io) and this generator globally.
-
-```bash
-npm install -g yo generator-angular2-webpack-starter
-```
-
-In your desired project folder run the generator.
-
-```bash
-yogenerator-angular2-webpack-starter
-```
-
-You'll be prompted to start the server once the generator has finished.
+* Install: `npm install -g yo angular2-webpack-starter`
+* Run: `yo angular2-webpack-starter`
 
 You'll then be able to access the application at `http://localhost:3000`.
+
+###Commands
+* `yo angular2-webpack-starter` shows a wizard for generating a new generator
+* `yo angular2-webpack-starter:component <name>` generates an Angular 2 component with the name `<name>`
 
 ### Generated Structure
 
