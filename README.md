@@ -84,4 +84,4 @@ Submit a pull request with your changes
 
 ### License
 
-Released under the MIT license: [opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)
+[MIT](/LICENSE)
