@@ -1,42 +1,63 @@
-# Generator Angular2
+# Generator Angular2 Webpack Starter
 
-[![Build Status](https://secure.travis-ci.org/swirlycheetah/generator-angular2.png?branch=master)](https://travis-ci.org/swirlycheetah/generator-angular2)  [![Join the chat at https://gitter.im/swirlycheetah/generator-angular2](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/swirlycheetah/generator-angular2?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/magarcia/generator-angular2-webpack-starter.svg?branch=master)](https://travis-ci.org/magarcia/generator-angular2-webpack-starter)  [![Gratipay](https://img.shields.io/gratipay/user/dougwilson.svg)])(https://gratipay.com/~magarcia/)
 
-A [Yeoman](http://yeoman.io) Generator to aid in bootstrapping an Angular2 application using the very latest Angular2 alpha release.
+A [Yeoman](http://yeoman.io) Generator to aid in bootstrapping an Angular2 application based on [Angular 2 Starter](https://angularclass.github.io/angular2-webpack-starter/)
 
 ### Getting Started
 
 Install both [Yeoman](http://yeoman.io) and this generator globally.
 
 ```bash
-npm install -g yo generator-angular2
+npm install -g yo generator-angular2-webpack-starter
 ```
 
 In your desired project folder run the generator.
 
 ```bash
-yo angular2
+yogenerator-angular2-webpack-starter
 ```
 
 You'll be prompted to start the server once the generator has finished.
 
-You'll then be able to access the application at `http://localhost:8000`. Serving the application can be configured in the `gulpfile.js` using [gulp-webserver](https://www.npmjs.com/package/gulp-webserver) options.
+You'll then be able to access the application at `http://localhost:3000`.
 
 ### Generated Structure
 
 The structure generated is;
 
 ```
-- src
-	- index.js
-	- index.html
-	- {generated-file-name}.js
-	- {generated-file-name}.html
-- .editorconfig 
-- .gitignore
-- gulpfile.js
-- package.json
-- readme.md
+angular2-webpack-starter/
+ ├──src/                       * our source files that will be compiled to javascript
+ |   ├──main.ts                * our entry file for our browser environment
+ │   │
+ |   ├──index.html             * Index.html: where we generate our index page
+ │   │
+ |   ├──vendor.ts              * our vendor file
+ │   │
+ │   ├──app/                   * WebApp: folder
+ │   │   ├──app.spec.ts        * a simple test of components in app.ts
+ │   │   └──app.ts             * App.ts: a simple version of our App component components
+ │   │
+ │   └──assets/                * static assets are served here
+ │       ├──icon/              * our list of icons from www.favicon-generator.org
+ │       ├──service-worker.js  * ignore this. Web App service worker that's not complete yet
+ │       ├──robots.txt         * for search engines to crawl your website
+ │       └──human.txt          * for humans to know who the developers are
+ │
+ ├──test/                      * this is our global unit tests and end-to-end tests
+ │
+ ├──spec-bundle.js             * ignore this magic that sets up our angular 2 testing environment
+ ├──karma.config.js            * karma config for our unit tests
+ ├──protractor.config.js       * protractor config for our end-to-end tests
+ │
+ ├──tsconfig.json              * config that webpack uses for typescript
+ ├──typings.json               * our typings manager
+ ├──package.json               * what npm uses to manage it's dependencies
+ │
+ ├──webpack.config.js          * our development webpack config
+ ├──webpack.test.config.js     * our testing webpack config
+ └──webpack.prod.config.js     * our production webpack config
 ```
 
 ### Developing
@@ -45,7 +66,7 @@ All contributions are more than welcome, no matter how large or small.
 
 Clone the repository and `cd` into it
 
-`git clone git@github.com:swirlycheetah/generator-angular2.git && cd generator-angular2`
+`git clone git@github.com:magarcia/generator-angular2-webpack-starter.git && cd generator-angular2-webpack-starter`
 
 Install the project dependencies
 
