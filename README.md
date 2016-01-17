@@ -6,7 +6,7 @@ A [Yeoman](http://yeoman.io) Generator to aid in bootstrapping an Angular2 appli
 
 ### Getting Started
 
-* Install: `npm install -g yo angular2-webpack-starter`
+* Install: `npm install -g yo generator-angular2-webpack-starter`
 * Run: `yo angular2-webpack-starter`
 
 You'll then be able to access the application at `http://localhost:3000`.
