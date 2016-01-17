@@ -4,18 +4,18 @@
 
 A [Yeoman](http://yeoman.io) Generator to aid in bootstrapping an Angular2 application based on [Angular 2 Starter](https://angularclass.github.io/angular2-webpack-starter/)
 
-### Getting Started
+## Getting Started
 
 * Install: `npm install -g yo generator-angular2-webpack-starter`
 * Run: `yo angular2-webpack-starter`
 
 You'll then be able to access the application at `http://localhost:3000`.
 
-###Commands
+## Commands
 * `yo angular2-webpack-starter` shows a wizard for generating a new generator
 * `yo angular2-webpack-starter:component <name>` generates an Angular 2 component with the name `<name>`
 
-### Generated Structure
+## Generated Structure
 
 The structure generated is;
 
@@ -53,31 +53,32 @@ angular2-webpack-starter/
  └──webpack.prod.config.js     * our production webpack config
 ```
 
-### Developing
+## Running Tests
 
-All contributions are more than welcome, no matter how large or small.
+### Run tests
 
-Clone the repository and `cd` into it
-
-```
-git clone git@github.com:magarcia/generator-angular2-webpack-starter.git
-cd generator-angular2-webpack-starter
+```shell
+npm run test
 ```
 
-Install the project dependencies
+### Run webdriver (for end-to-end)
 
-`npm install`
+```shell
+npm run webdriver:update
+npm run webdriver:start
+```
 
-Link the package to use the version you're working on
+### Run end-to-end tests
 
-`npm link`
+```shell
+# make sure you have webdriver running and a sever for the client app
+npm run e2e
+```
 
-Run the tests to ensure no failures
+## Contribution
 
-`npm test`
+[Contribution guidelines](/CONTRIBUTING.md)
 
-Submit a pull request with your changes
-
-### License
+## License
 
 [MIT](/LICENSE)
