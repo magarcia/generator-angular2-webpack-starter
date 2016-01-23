@@ -52,7 +52,7 @@ import {Home} from './home/home';
     </main>
 
     <footer>
-      <%= appname %> by <%= author %>
+      <%= appname %> by <a href="mailto:<%= email%>" target="_top"><%= name %></a>
     </footer>
   `
 })

@@ -128,6 +128,10 @@ describe('when angular2 webpack starter generator generates', function() {
     assert.fileContent('src/app/app.ts', "name = 'Angular2'");
   });
 
+  it('updates src/app/app.ts file with mailto link', function () {
+    assert.fileContent('src/app/app.ts', '<a href="mailto:foo@example.com" target="_top">Rick</a>');
+  });
+
   it('updates src/app/app.spec.ts file with appname', function () {
     assert.fileContent('src/app/app.spec.ts', "expect(app.name).toEqual('Angular2');");
   });

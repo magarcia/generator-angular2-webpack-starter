@@ -189,7 +189,8 @@ module.exports = yeoman.generators.Base.extend({
       // App
       copy('src/app/app.ts', {
         appname: this.props.appname,
-        author: this.props.author
+        name: this.props.name.trim(),
+        email: this.props.email
       });
       copy('src/app/app.spec.ts', {
         appname: this.props.appname
