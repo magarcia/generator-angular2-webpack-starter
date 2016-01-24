@@ -11,14 +11,17 @@ module.exports = yeoman.generators.NamedBase.extend({
   writing: function () {
     var that = this;
 
-    this.camelName = lodash.camelCase(this.name);
-    this.kebabName = lodash.kebabCase(this.name);
-    this.componentName = lodash.capitalize(this.camelName);
+    this.props = {};
+
+    this.props.name = this.name;
+    this.props.camelName = lodash.camelCase(this.name);
+    this.props.kebabName = lodash.kebabCase(this.name);
+    this.props.componentName = lodash.capitalize(this.props.camelName);
 
     var copy = function (file, options) {
       var origin = that.templatePath(file);
       var destination = that.destinationPath(
-        path.join('src', 'app', that.kebabName, file.replace(/component/, that.kebabName))
+        path.join('src', 'app', that.props.kebabName, file.replace(/component/, that.props.kebabName))
       );
 
       if(typeof(options) === 'object') {
@@ -29,10 +32,10 @@ module.exports = yeoman.generators.NamedBase.extend({
       }
     }
 
-    copy('component.html');
-    copy('component.css');
-    copy('component.ts');
-    copy('component.spec.ts');
+    copy('component.html', this.props);
+    copy('component.css', this.props);
+    copy('component.ts', this.props);
+    copy('component.spec.ts', this.props);
   }
 
 });

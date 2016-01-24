@@ -30,14 +30,14 @@ describe('<%= componentName %>', () => {
 
   it('should have a http', inject([<%= componentName %>], (<%= camelName %>) => {
     expect(!!<%= camelName %>.http).toEqual(true);
-  }));
+}));
 
-  it('should log ngOnInit', inject([<%= componentName %>], (<%= camelName %>) => {
-    spyOn(console, 'log');
-    expect(console.log).not.toHaveBeenCalled();
+it('should log ngOnInit', inject([<%= componentName %>], (<%= camelName %>) => {
+  spyOn(console, 'log');
+expect(console.log).not.toHaveBeenCalled();
 
-    <%= camelName %>.ngOnInit();
-    expect(console.log).toHaveBeenCalled();
+<%= camelName %>.ngOnInit();
+expect(console.log).toHaveBeenCalled();
   }));
 
 });

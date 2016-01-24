@@ -9,7 +9,7 @@ describe('when angular2 webpack starter generator generates', function() {
 
   before(function(done) {
     helpers.run(path.join(__dirname, '../app'))
-      .inDir(path.join(os.tmpdir(), './foo'))
+      .inTmpDir()
       .withPrompts({
         appname: 'Angular2',
         description: 'Lorem ipsum',
