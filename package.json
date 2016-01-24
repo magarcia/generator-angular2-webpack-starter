@@ -1,6 +1,6 @@
 {
   "name": "generator-angular2-webpack-starter",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Angular2 Webpack Starter Yeoman Generator",
   "license": "MIT",
   "main": "app/index.js",
