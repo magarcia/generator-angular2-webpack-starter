@@ -43,9 +43,27 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   initializing: function () {
+    var that = this;
+
     this.props = {};
     this.gitc = gitConfig.sync();
     this.gitc.user = this.gitc.user || {};
+
+    this.copy = function (file, options) {
+      if(typeof(options) === 'object') {
+        that.fs.copyTpl(
+          that.templatePath(file),
+          that.destinationPath(file.replace(/^_/, '.')),
+          options
+        );
+      } else {
+        that.fs.copy(
+          that.templatePath(file),
+          that.destinationPath(file.replace(/^_/, '.'))
+        );
+      }
+    }
+
   },
 
   prompting: function() {
@@ -129,23 +147,7 @@ module.exports = yeoman.generators.Base.extend({
       );
     },
     app: function() {
-
-      var that = this;
-
-      var copy = function (file, options) {
-        if(typeof(options) === 'object') {
-          that.fs.copyTpl(
-            that.templatePath(file),
-            that.destinationPath(file.replace(/^_/, '.')),
-            options
-          );
-        } else {
-          that.fs.copy(
-            that.templatePath(file),
-            that.destinationPath(file.replace(/^_/, '.'))
-          );
-        }
-      }
+      var copy = this.copy;
 
       copy('package.json', {
         appname: this.props.appname,
@@ -196,6 +198,10 @@ module.exports = yeoman.generators.Base.extend({
         appname: this.props.appname
       });
       copy('src/app/directives/router-active.ts');
+    },
+
+    component: function() {
+      var copy = this.copy;
 
       // App Home
       copy('src/app/home/home.ts');
@@ -206,6 +212,10 @@ module.exports = yeoman.generators.Base.extend({
       copy('src/app/home/directives/x-large.spec.ts');
       copy('src/app/home/providers/title.ts');
       copy('src/app/home/providers/title.spec.ts');
+    },
+
+    assets: function() {
+      var copy = this.copy;
 
       // Assets
       copy('src/assets/manifest.json', {
@@ -214,8 +224,8 @@ module.exports = yeoman.generators.Base.extend({
       copy('src/assets/humans.txt');
       copy('src/assets/robots.txt');
       copy('src/assets/service-worker.js');
-      mkdirp.sync(that.destinationPath('src/assets/css'));
-      mkdirp.sync(that.destinationPath('src/assets/img'));
+      mkdirp.sync(this.destinationPath('src/assets/css'));
+      mkdirp.sync(this.destinationPath('src/assets/img'));
       copy('src/assets/icon/android-icon-144x144.png');
       copy('src/assets/icon/android-icon-192x192.png');
       copy('src/assets/icon/android-icon-36x36.png');
@@ -242,6 +252,11 @@ module.exports = yeoman.generators.Base.extend({
       copy('src/assets/icon/ms-icon-150x150.png');
       copy('src/assets/icon/ms-icon-310x310.png');
       copy('src/assets/icon/ms-icon-70x70.png');
+
+    },
+
+    tests: function() {
+      var copy = this.copy;
 
       // Tests
       copy('test/injector.spec.ts');
